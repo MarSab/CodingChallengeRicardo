@@ -1,0 +1,83 @@
+/**
+ *  Do not remove the comments below. It's the markers used by wiredep to inject
+ *  stylus dependencies when defined in the bower.json of your dependencies
+ */
+// bower:styl
+// endbower
+
+//COLORS
+bgColor = #f8f8f8
+bgColor2= white
+textColor = #7d7d7d;
+ricardoBlue = #0a44b9;
+ricardoOrange = #f7941d;
+
+@import url("//fonts.googleapis.com/css?family=Roboto\+Slab:400,700|Roboto:400,700,700italic,400italic")
+
+@font-face
+  font-family: 'Material Icons';
+  font-style: normal;
+  font-weight: 400;
+  src: url(../../bower_components/material-design-iconfont/iconfont/MaterialIcons-Regular.eot); /* For IE6-8 */
+  src: local('Material Icons'),
+       local('MaterialIcons-Regular'),
+       url(../../bower_components/material-design-iconfont/iconfont/MaterialIcons-Regular.woff2) format('woff2'),
+       url(../../bower_components/material-design-iconfont/iconfont/MaterialIcons-Regular.woff) format('woff'),
+       url(../../bower_components/material-design-iconfont/iconfont/MaterialIcons-Regular.ttf) format('truetype');
+
+.material-icons
+  font-family: 'Material Icons';
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px;  /* Preferred icon size */
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  line-height: 1;
+  text-transform: none;
+  letter-spacing: normal;
+  word-wrap: normal;
+
+  /* Support for all WebKit browsers. */
+  -webkit-font-smoothing: antialiased;
+  /* Support for Safari and Chrome. */
+  text-rendering: optimizeLegibility;
+
+  /* Support for Firefox. */
+  -moz-osx-font-smoothing: grayscale;
+
+  /* Support for IE. */
+  font-feature-settings: 'liga';
+
+html, body
+  font-family 'Roboto', 'Arial','sans serif', normal;
+  font-size: 100%
+  md-content
+    color: rgba(0, 0, 0, .4)
+    font-weight: normal;
+    overflow: inherit;
+    width: 100%
+  a
+    color: rgba(0, 0, 0, .4)
+    text-decoration: none;
+    &:hover
+      color: rgba(ricardoOrange, .6)
+
+section
+  padding: 2em 1em;
+
+
+[layout=row]
+  flex-direction row
+
+footer
+  background-color: white;
+  color: ricardoBlue;
+  border-top: solid 3px ricardoOrange;
+
+/**
+ *  Do not remove the comments below. It's the markers used by gulp-inject to inject
+ *  all your stylus files automatically
+ */
+// injector
+// endinjector

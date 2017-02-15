@@ -1,0 +1,55 @@
+{
+  "overview": {
+    "billing_status": "active",
+    "credit_limit": 1000,
+    "to_pay_amount": 90,
+    "not_invoiced_fees_debits": 21.9,
+    "not_invoiced_fees_credits": 15,
+    "not_invoiced_fees_balance": 6.9,
+    "total_amount": 96.9,
+    "next_invoice_date": "2017-01-20T00:00:00Z",
+    "generate_invoice_above": 2
+  },
+  "latestTransactions": [
+    {
+      "id": "CH1612000001000000004",
+      "date": "2016-12-07T10:38:00Z",
+      "type": "payment",
+      "total": -1000
+    },
+    {
+      "id": "CH1612000000000000151",
+      "date": "2016-12-20T17:32:00Z",
+      "type": "fees",
+      "total": 114.9
+    },
+    {
+      "id": "CH1612000000000000152",
+      "date": "2016-12-20T17:33:00Z",
+      "type": "credit_note",
+      "total": -100
+    },
+    {
+      "id": "CH1612000000000000160",
+      "date": "2016-12-21T15:45:00Z",
+      "type": "fees",
+      "total": 10
+    }
+  ],
+  "openInvoices": [
+    {
+      "id": "CH1612000000000000161",
+      "date": "2016-12-21T15:47:00Z",
+      "balance": 45,
+      "payment_due_date": "2017-01-21T15:47:00Z",
+      "reminder": 0
+    },
+    {
+      "id": "CH1612000000000000162",
+      "date": "2016-12-21T15:47:00Z",
+      "balance": 45,
+      "payment_due_date": "2017-01-23T13:13:00Z",
+      "reminder": 1
+    }
+  ]
+}
