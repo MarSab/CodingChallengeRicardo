@@ -11,7 +11,7 @@
       restrict: 'E',
       templateUrl: 'app/components/transactions/transactions.html',
       scope: {
-        creationDate: '='
+        trans: '='
       },
       controller: TransactionsController,
       controllerAs: 'tr',
@@ -20,35 +20,17 @@
 
 
     /** @ngInject */
-    function TransactionsController() {
-      var tr = this;
+    function TransactionsController($http, $log, $scope) {
 
-      tr.transactions = [{
-        "id": "CH1612000001000000004",
-        "date": "2016-12-07T10:38:00Z",
-        "type": "payment",
-        "total": -1000
-      },
-      {
-        "id": "CH1612000000000000151",
-        "date": "2016-12-20T17:32:00Z",
-        "type": "fees",
-        "total": 114.9
-      },
-      {
-        "id": "CH1612000000000000152",
-        "date": "2016-12-20T17:33:00Z",
-        "type": "credit_note",
-        "total": -100
-      },
-      {
-        "id": "CH1612000000000000160",
-        "date": "2016-12-21T15:45:00Z",
-        "type": "fees",
-        "total": 10
-      }];
-    }
-
+      $http({method: 'GET', url:'assets/billing.json'})
+    .then(
+        function(json) {
+          $scope.trans = json.data.latestTransactions;
+        }),
+        function() {
+            $log.warn('An error occured');
+        };
+      }
     return directive;
   }
 

@@ -13,7 +13,7 @@
           <h3>Ref Number</h3>
           <h3>Total to pay</h3>
         </div>
-        <md-list-item ng-repeat="item in oi.openInvoices">
+        <md-list-item ng-repeat="item in openInv">
           <div flex layout="row" layout-align="space-around center">
             <h3>{{item.date | date:'yyyy-MM-dd'}}</h3>
             <h3>{{item.payment_due_date| date:'yyyy-MM-dd'}}</h3>

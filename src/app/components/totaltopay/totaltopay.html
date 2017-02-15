@@ -1,7 +1,7 @@
 <md-card flex layout="row" layout-align="space-around center" class="total-toPay__container">
   <div class="total-toPay__text">
     <h2>Open invoices due amount</h2>
-    <h1>{{tot.toPay}} CHF</h1>
+    <h1>{{tot.toPay | currency : "CHF "}}</h1>
   </div>
   <div class="total-toPay__btn">
     <md-button class="md-raised">Pay now</md-button>

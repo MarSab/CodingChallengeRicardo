@@ -11,7 +11,7 @@
       restrict: 'E',
       templateUrl: 'app/components/invoices/invoices.html',
       scope: {
-        creationDate: '='
+        openInv: '='
       },
       controller: InvoicesController,
       controllerAs: 'oi',
@@ -19,23 +19,18 @@
     };
 
     /** @ngInject */
-    function InvoicesController() {
-      var oi = this;
+    function InvoicesController($http, $log, $scope) {
+      
+      $http({method: 'GET', url:'assets/billing.json'})
+    .then(
+        function(json) {
+          $scope.openInv = json.data.openInvoices;
 
-      oi.openInvoices = [{
-      "id": "CH1612000000000000161",
-      "date": "2016-12-21T15:47:00Z",
-      "total": 45,
-      "payment_due_date": "2017-01-21T15:47:00Z",
-      "reminder": 0
-    },
-    {
-      "id": "CH1612000000000000162",
-      "date": "2016-12-21T15:47:00Z",
-      "total": 33,
-      "payment_due_date": "2017-01-23T13:13:00Z",
-      "reminder": 1
-    }];
+        }),
+        function() {
+            $log.warn('An error occured');
+        };
+
 return directive;
     }
 

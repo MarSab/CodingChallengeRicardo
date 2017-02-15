@@ -13,12 +13,12 @@
           <h3>Ref Number</h3>
           <h3>Total payed</h3>
         </div>
-        <md-list-item ng-repeat="item in tr.transactions">
+        <md-list-item ng-repeat="item in trans">
           <div flex layout="row" layout-align="space-around center">
             <h3>{{item.date | date:'yyyy-MM-dd'}}</h3>
             <h3>{{item.type}}</h3>
             <h3>{{item.id}}</h3>
-            <h3>{{item.total}}</h3>
+            <h3>{{item.total | currency : "CHF "}}</h3>
           </div>
           <md-divider ng-if="!$last"></md-divider>
         </md-list-item>
