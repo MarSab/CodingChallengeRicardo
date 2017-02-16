@@ -30,13 +30,13 @@
           var openInv = json.data.openInvoices;
           tot.toPay = 0;
           for(var item in openInv){
-            tot.toPay = tot.toPay + openInv[item].balance;
+            tot.toPay += openInv[item].balance;
           }
           return tot
-        }),
+        },
         function() {
             $log.warn('An error occured');
-        };
+        });
 
     }
   }
