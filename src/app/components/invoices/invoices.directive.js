@@ -31,9 +31,9 @@
             $log.warn('An error occured');
         });
 
-return directive;
-    }
 
+    }
+return directive;
   }
 
 })();
