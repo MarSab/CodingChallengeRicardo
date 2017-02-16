@@ -21,22 +21,31 @@
     return directive;
 
     /** @ngInject */
-    function TotaltopayController($http, $log) {
-      var tot = this;
+    function TotaltopayController($http, $log, $scope) {
+      $scope.isDisabled = false;
 
-      $http({method: 'GET', url:'assets/billing.json'})
-    .then(
-        function(json) {
-          var openInv = json.data.openInvoices;
-          tot.toPay = 0;
-          for(var item in openInv){
-            tot.toPay += openInv[item].balance;
-          }
-          return tot
-        },
-        function() {
+      $scope.pay = function() {
+        $scope.toPay = 0;
+        $scope.isDisabled = true;
+        $scope.$root.payed = true;
+      };
+
+      $http({
+          method: 'GET',
+          url: 'assets/billing.json'
+        })
+        .then(
+          function(json) {
+            var openInv = json.data.openInvoices;
+            $scope.toPay = 0;
+            for (var item in openInv) {
+              $scope.toPay += openInv[item].balance;
+            }
+            return tot;
+          },
+          function() {
             $log.warn('An error occured');
-        });
+          });
 
     }
   }

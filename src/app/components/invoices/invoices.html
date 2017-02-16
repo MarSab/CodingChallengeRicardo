@@ -5,24 +5,24 @@
     </md-card-title-text>
   </md-card-title>
 
-  <md-content>
-      <md-list>
-        <div flex layout="row" layout-align="space-around center" class="open-invoices__titles">
-          <h3>Date</h3>
-          <h3>Due Date</h3>
-          <h3>Ref Number</h3>
-          <h3>Total to pay</h3>
-        </div>
-        <md-list-item ng-repeat="item in openInv">
-          <div flex layout="row" layout-align="space-around center">
-            <h3>{{item.date | date:'yyyy-MM-dd'}}</h3>
-            <h3>{{item.payment_due_date| date:'yyyy-MM-dd'}}</h3>
-            <h3>{{item.id}}</h3>
-            <h3>{{item.total}}</h3>
-          </div>
-          <md-divider ng-if="!$last"></md-divider>
-        </md-list-item>
-      </md-list>
-    </md-content>
+  <md-content flex layout="row" layout-align="center center">
+
+    <h2 ng-if="$root.payed">You don't have any open invoice!</h2>
+    <table ng-if="!$root.payed">
+      <tr class="open-invoices__titles">
+        <th>Date</th>
+        <th>Due date</th>
+        <th>Reference number</th>
+        <th>Total to pay</th>
+      </tr>
+      <tr ng-repeat="item in openInv">
+        <td>{{item.date | date:'yyyy-MM-dd'}}</td>
+        <td>{{item.payment_due_date| date:'yyyy-MM-dd'}}</td>
+        <td>{{item.id}}</td>
+        <td>{{item.balance | currency: "CHF "}}</td>
+      </tr>
+    </table>
+
+  </md-content>
 
 </md-card>

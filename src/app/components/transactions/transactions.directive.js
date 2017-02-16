@@ -22,15 +22,20 @@
     /** @ngInject */
     function TransactionsController($http, $log, $scope) {
 
-      $http({method: 'GET', url:'assets/billing.json'})
-    .then(
-        function(json) {
-          $scope.trans = json.data.latestTransactions;
-        },
-        function() {
+      $http({
+          method: 'GET',
+          url: 'assets/billing.json'
+        })
+        .then(
+          function(json) {
+            $scope.trans = json.data.latestTransactions;
+          },
+          function() {
             $log.warn('An error occured');
-        });
-      }
+          });
+
+    }
+
     return directive;
   }
 

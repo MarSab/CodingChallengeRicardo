@@ -11,7 +11,7 @@
       restrict: 'E',
       templateUrl: 'app/components/header/header.html',
       scope: {
-          creationDate: '='
+        creationDate: '='
       },
       controller: HeaderController,
       controllerAs: 'vm',
@@ -21,11 +21,7 @@
     return directive;
 
     /** @ngInject */
-    function HeaderController(moment) {
-      var vm = this;
-
-      // "vm.creationDate" is available by directive option "bindToController: true"
-      vm.relativeDate = moment(vm.creationDate).fromNow();
+    function HeaderController() {
     }
   }
 

@@ -5,24 +5,22 @@
     </md-card-title-text>
   </md-card-title>
 
-  <md-content>
-      <md-list>
-        <div flex layout="row" layout-align="space-around center" class="transactions__titles">
-          <h3>Date</h3>
-          <h3>Type</h3>
-          <h3>Ref Number</h3>
-          <h3>Total payed</h3>
-        </div>
-        <md-list-item ng-repeat="item in trans">
-          <div flex layout="row" layout-align="space-around center">
-            <h3>{{item.date | date:'yyyy-MM-dd'}}</h3>
-            <h3>{{item.type}}</h3>
-            <h3>{{item.id}}</h3>
-            <h3>{{item.total | currency : "CHF "}}</h3>
-          </div>
-          <md-divider ng-if="!$last"></md-divider>
-        </md-list-item>
-      </md-list>
-    </md-content>
+  <md-content flex layout="row" layout-align="center center">
+    <table class="card__table">
+      <tr class="transactions__titles">
+        <th>Date</th>
+        <th>Type</th>
+        <th>Reference number</th>
+        <th>Total payed</th>
+      </tr>
+      <tr ng-repeat="item in trans">
+        <td>{{item.date | date:'yyyy-MM-dd'}}</td>
+        <td>{{item.type}}</td>
+        <td>{{item.id}}</td>
+        <td>{{item.total | currency: "CHF "}}</td>
+      </tr>
+    </table>
+
+  </md-content>
 
 </md-card>

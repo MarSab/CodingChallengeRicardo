@@ -66,6 +66,25 @@ html, body
 section
   padding: 2em 1em;
 
+md-card
+  overflow: hidden;
+  md-content
+    overflow: auto;
+
+md-card-title
+  color: ricardoOrange;
+
+table
+  @media(max-width: 645px)
+    width:95%;
+  width: 80%;
+  line-height: 1.8em;
+  padding: 1.5em;
+  text-align: left;
+  tr
+    border-bottom: 1px solid rgba(0, 0, 0, 1);
+  td
+    padding: 0 .5em;
 
 [layout=row]
   flex-direction row
@@ -74,6 +93,7 @@ footer
   background-color: white;
   color: ricardoBlue;
   border-top: solid 3px ricardoOrange;
+
 
 /**
  *  Do not remove the comments below. It's the markers used by gulp-inject to inject
