@@ -26,10 +26,10 @@
         function(json) {
           $scope.openInv = json.data.openInvoices;
 
-        }),
+        },
         function() {
             $log.warn('An error occured');
-        };
+        });
 
 return directive;
     }
