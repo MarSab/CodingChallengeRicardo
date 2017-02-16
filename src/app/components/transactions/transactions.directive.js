@@ -26,10 +26,10 @@
     .then(
         function(json) {
           $scope.trans = json.data.latestTransactions;
-        }),
+        },
         function() {
             $log.warn('An error occured');
-        };
+        });
       }
     return directive;
   }
