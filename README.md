@@ -13,13 +13,8 @@ Download the project and open it in your IDE.
 In the folder of the project run
 ```shell
 npm install
-```
-
-and
-
-```shell
 bower install
-``` 
+```
 
 When they are over, you can just run
 ```shell
